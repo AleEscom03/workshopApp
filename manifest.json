@@ -1,0 +1,7 @@
+{
+  "name": "workshop-polymer",
+  "short_name": "workshop-polymer",
+  "description": "App de Polymer",
+  "start_url": "/",
+  "display": "standalone"
+}

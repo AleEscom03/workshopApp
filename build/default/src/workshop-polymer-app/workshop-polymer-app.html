@@ -20,23 +20,25 @@
     </alejandro-buendia>
   </template>
 
-  <script>
-    /**
-     * @customElement
-     * @polymer
-     */
-    class WorkshopPolymerApp extends Polymer.Element {
-      static get is() { return 'workshop-polymer-app'; }
-      static get properties() {
-        return {
-          prop1: {
-            type: String,
-            value: 'WORKSHOP-APP de Alejandro Buendia Escamilla '
-          }
-        };
-      }
-    }
+  <script>/**
+ * @customElement
+ * @polymer
+ */
+class WorkshopPolymerApp extends Polymer.Element {
+  static get is() {
+    return 'workshop-polymer-app';
+  }
 
-    window.customElements.define(WorkshopPolymerApp.is, WorkshopPolymerApp);
-  </script>
+  static get properties() {
+    return {
+      prop1: {
+        type: String,
+        value: 'WORKSHOP-APP de Alejandro Buendia Escamilla '
+      }
+    };
+  }
+
+}
+
+window.customElements.define(WorkshopPolymerApp.is, WorkshopPolymerApp);</script>
 </dom-module>

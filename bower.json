@@ -4,7 +4,7 @@
   "main": "index.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^2.0.0",
-    "alejandro-buendia": "https://github.com/AleEscom03/alejandro-buendia.git#1.0.0"
+    "alejandro-buendia": "https://github.com/AleEscom03/alejandro-buendia.git#^1.0.0"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#^6.0.0",

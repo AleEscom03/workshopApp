@@ -1,5 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../../bower_components/alejandro-buendia/alejandro-buendia.html">
+<link rel="import" href="../../bower_components/login-workshop/login-workshop.html">
 
 <dom-module id="workshop-polymer-app">
   <template>
@@ -16,8 +17,24 @@
           background-color: #8d5d9c;
         }
       }
+      .hidden{
+        opacity: 0;
+      }
+      .show{
+        display: block;
+      }
+      login-workshop{
+        --login-workshop:{
+          transition: opacity 1s ease-in-out;
+          -webkit-transition: opacity 1s ease-in-out;
+          -moz-transition:opacity 1s ease-in-out;
+        }
+      }
     </style>
+
+    <login-workshop id="ale" on-email-changed="getEmail" on-btn-click-changed="loggin" class$="[[loginClass]]"></login-workshop>
     <h2>[[prop1]]!</h2>
+    <h2>Correo: [[emailw]]</h2>
     <alejandro-buendia prop-title="Titulo desde app" prop-label="label desde app" prop-value-input="valor desde app">
 
     </alejandro-buendia>
@@ -34,9 +51,31 @@
         return {
           prop1: {
             type: String,
-            value: 'WORKSHOP-APP de Alejandro Buendia Escamilla '
+            value: 'WORKSHOP-APP'
+          },
+          emailw:{
+            type:String,
+            value:""
+          },
+          isLogged:{
+            type: Boolean,
+            value: false  
+          },
+          loginClass:{
+            type:String,
+            computed:'computeClass(isLogged)'
           }
         };
+      }
+      computeClass(isLogged){
+        return (isLogged)?"hidden":"show";
+      }
+      loggin(){
+        console.log(this.$.ale);
+        this.isLogged = !this.isLogged;
+      }
+      getEmail(e){
+        this.emailw = e.detail.value;
       }
     }
 

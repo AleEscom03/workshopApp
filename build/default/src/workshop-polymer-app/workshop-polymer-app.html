@@ -1,6 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
 <link rel="import" href="../../bower_components/alejandro-buendia/alejandro-buendia.html">
 <link rel="import" href="../../bower_components/login-workshop/login-workshop.html">
+<link rel="import" href="../../bower_components/pokedex-component/pokedex-component.html">
 
 <dom-module id="workshop-polymer-app">
   <template>
@@ -36,8 +37,10 @@
     <h2>[[prop1]]!</h2>
     <h2>Correo: [[emailw]]</h2>
     <alejandro-buendia prop-title="Titulo desde app" prop-label="label desde app" prop-value-input="valor desde app">
-
     </alejandro-buendia>
+    <hr>
+    <h2>pokedex-component</h2>
+    <pokedex-component limit="50"></pokedex-component>
   </template>
 
   <script>/**
@@ -61,7 +64,7 @@ class WorkshopPolymerApp extends Polymer.Element {
       },
       isLogged: {
         type: Boolean,
-        value: false
+        value: true
       },
       loginClass: {
         type: String,
